@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+    <!-- <form action="" method="POST">
+        <label>Book Name</label>
+        <input type="text">
+        <label>Book Author</label>
+        <input type="text">
+        <label>Rating</label>
+        <input type="text">
+        <button type="submit">Add Book</button>
+    </form> -->
+    <form method="POST", action="{{ url_for('add') }}">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.name.label }}<br />{{ form.name }}
+        </div>
+        <div>
+            {{ form.author.label }}<br />{{ form.author }}
+        </div>
+        <div>
+            {{ form.rating.label }}<br />{{ form.rating }}
+        </div>
+        {{ form.submit }}
+    </form>
+</body>
+</html>
